@@ -263,7 +263,7 @@ class DrupalApi
         $kernel->invalidateContainer();
 
         // Prepare a NULL request.
-        $kernel->prepareLegacyRequest($request);
+        $kernel->preHandle($request);
 
         foreach (Cache::getBins() as $bin) {
             $bin->deleteAll();
